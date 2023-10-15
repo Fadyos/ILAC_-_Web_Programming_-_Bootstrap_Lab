@@ -35,7 +35,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#instructors">Our Instructors</a>
+                <a class="nav-link" href="#instructors">Similar Artists</a>
             </li>
 
             <li class="nav-item">
@@ -52,7 +52,7 @@
         </ul>
     </div>
     </div>
-    </nav>
+    <!-- </nav> -->
 
 
     <!-- Bootstrap Carousel Component: Image carousel with captions -->
@@ -196,6 +196,182 @@
             </button>
         </div>
     </section>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <!--
+        Part#2: second main container div element
+
+        the div.container to wrap the entire nav elements!
+        .container => sets a max-width at each responsive breakpoint
+
+        We can change "container-fluid" to "container" if we like to do it:
+    -->
+        <div class="container">
+            <!--
+            Navbar content: Adding the logo/branding as link to the home page
+            class "navbar-brand" for your company, product, or project name.
+            Link: https://getbootstrap.com/docs/5.2/components/navbar/?#nav
+        -->
+            <a class="navbar-brand" href="#">Lomepal's Bio</a>
+
+            <!--
+            Adding the button for hamburger icon
+            This button will appear only when we the screen is less than large
+            So it has this:
+            .navbar-toggler => for use with BS collapse plugin and other navigation toggling behaviors.
+
+            **********************
+            Using data attributes:
+            **********************
+            HTML5 is designed with extensibility in mind for data 
+            that should be associated with a particular element 
+            but need not have any defined meaning. 
+            data-* attributes allow us to store extra information on standard,
+            semantic HTML elements without other hacks 
+            such as non-standard attributes, or extra properties on DOM.
+            link: https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+
+            data-* Attributes:
+            * The data-* attribute is used to store custom data private to the page or application.
+            * The data-* attribute gives us the ability to embed custom data attributes on all HTML elements.
+
+            NOTE:
+            These two attributes:
+            - data-bs-target
+            - aria-controls
+            must have the value of the "id" attribute for the div element
+            that contains the nav elements
+
+            ARIA enables developers to describe their widgets in more detail
+            by adding special attributes to the markup.
+            Designed to fill the gap between standard HTML tags and the desktop-style controls
+            found in dynamic web applications,
+            ARIA provides roles and states that describe the behavior of most familiar UI widgets.
+
+            The original link for this article:
+            https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+
+            You can check this Youtube video title:
+            ARIA, Accessibility APIs and coding like you give a damn! 
+            – Léonie Watson / Front-Trends 2015
+            The link is: https://youtu.be/qdB8SRhqvFc
+
+            Or This Youtube channel: W3C Web Accessibility Initiative (WAI)
+        -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <!--
+                Adding the span element for the hamburger icon
+                The span element for loading the icon in small devices screens 
+            -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--
+            All nav elements are inclosed with another div:
+            This div element to wrap the ul and its li items
+            the two classes .collapse and .navbar-collapse 
+            are for grouping and hiding navbar contents by a parent breakpoint
+            .collapse => hides content => make the nav collapsed in smaller screens
+
+            Both: .collapse and .navbar-collapse
+            are used for grouping and hiding navbar contents by a parent breakpoint.
+
+            Notice that the "id" value is used by BS to target this div element
+            Through the toggle button (the hamburger icon)
+            To hide/show (toggle) the nav elements
+
+            So this id value will be used with attribute "data-target" inside the button element
+        -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!--
+                The ul element:
+                .navbar-nav => for a full-height and lightweight navigation
+                (including support for dropdowns).
+
+                Where property is one of:
+                m - for classes that set margin
+                p - for classes that set padding
+
+                NOTES:
+                For Auto margins, We can use the "Flexbox" options
+                which mix flex alignments with auto margins:
+                - .me-auto => (me) margin-end pushing/moving the current element to the left
+                - .ms-auto => (ms) margin-start pushing/moving the current element to the right
+
+                in some situation when using div with a elements, we can also use:
+                - .ml-auto => (ml) margin-lef having margin on the left to push/move current element
+
+                It's nice to have the navigation item on the right side:  .ms-auto
+
+                Link: https://getbootstrap.com/docs/5.2/utilities/flex/#auto-margins
+                Link: https://getbootstrap.com/docs/5.0/utilities/spacing/#notation
+
+                - Using horizontal margin utilities like .ms-auto as spacers:
+                - removing this .ms-auto will align the nav list items besides the logo (no good!)
+
+                For more reading and example:
+                .my-2
+                * m: for margins (adding margins)
+                * y: for both top and bottom margins 
+                (think about the y horizontal axis)
+                * -2:  Classes are built from a default Sass map 
+                ranging from .25rem to 3rem
+                so 2 sets margin or padding to .5rem (8px if font-size is 16px)
+
+                For more info:
+                https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp
+                Or:
+                https://www.w3schools.com/bootstrap5/bootstrap_utilities.php
+
+                W3Schools Table:
+                Where size is one of:
+                0 - sets margin or padding to 0
+                1 - sets margin or padding to .25rem (4px if font-size is 16px)
+                2 - sets margin or padding to .5rem (8px if font-size is 16px)
+                3 - sets margin or padding to 1rem (16px if font-size is 16px)
+                4 - sets margin or padding to 1.5rem (24px if font-size is 16px)
+                5 - sets margin or padding to 3rem (48px if font-size is 16px)
+                auto - sets margin to auto
+
+                .mb-2 => set the bottom margin to 2 in all screen sizes
+                .my-lg-0 => set the top/bottom margin to 0 in large screen size only
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <!--
+                        Add the .active class on .nav-link to indicate the current page.
+                    -->
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#curriculum">Curriculum</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#instructors">Similar Artists</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonial">Students Testimonial</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div> <!-- end div.collapse -->
+        </div> <!-- end div.container-fluid -->
+    </nav>
+
     </header>
 
 
@@ -420,40 +596,41 @@
         <div class="row align-items-center">
 
             <div class="col-md border border-secondary rounded-3 bg-light p-2">
-                <h3>Front-End Development</h3>
-                <p>Learning the essential tools for Front-end development which include:
+                <h3>Lomepal's Concert Schedule</h3>
+                <p>Keep yourself aware of Lomepal's incoming concerts:
                 </p>
                 <ul>
-                    <li>HTML and CSS</li>
-                    <li>JavaScript</li>
-                    <li>Bootstrap</li>
-                    <li>ReactJS</li>
+                    <li>November 7 - Lille, 59, ZENITH DE LILLE</li>
+                    <li>November 8 - Lille, 59, ZENITH DE LILLE</li>
+                    <li>November 9 - Le Grand Quevilly, 76, ZENITH DE ROUEN</li>
+                    <li>November 11 - Amneville Les Thermes, 57, GALAXIE</li>
+                    <li>November 12 - Lyon, 69, FRHALLE TONY GARNIER</li>
+                    <li>November 14 - Bruz, 35, Le MusikHALL</li>
                 </ul>
 
                 <a class="btn btn-primary w-75 d-block m-auto" href="#" role="button">
-                    Front-end development details
+                    Lomepal Concert Details
                     <i class="bi-caret-right-fill"></i>
                 </a>
             </div>
 
             <div class="col-md">
-                <img src="assets/images/front-end.jpg" class="w-100" alt="Front-End Image">
+                <img src="assets/images/Lomepal - Concert.jpeg" class="w-100" alt="Lomepal Concert Image">
             </div>
         </div>
         <hr>
         <div class="row align-items-center">
             <div class="col-md">
-                <img src="assets/images/back-end.jpg" class="w-100" alt="Back-End Image">
+                <img src="assets/images/Lomepal - Platine Disc.jpeg" class="w-100" alt="Lomepal's Platine Disc">
             </div>
             <div class="col-md border border-secondary rounded-3 bg-light p-2">
-                <h3>Back-End Development</h3>
-                <p>Learning the essential tools for back-end development which include:
+                <h3>Lomepal's Discography</h3>
+                <p>Check out Lomepal's Discography & Prizes!
                 </p>
                 <ul>
-                    <li>PHP</li>
-                    <li>Python</li>
-                    <li>MySQL</li>
-                    <li>MongoDB</li>
+                    <li>FLIP - 310 000 sales - 3x Platine</li>
+                    <li>Jeannine - 510 000 sales - Diamond</li>
+                    <li>Mauvais Ordre - 2x Platine</li>
                 </ul>
                 <a class="btn btn-primary w-75 d-block m-auto" href="#" role="button">
                     Back-end development details
@@ -473,12 +650,12 @@
 
                 <div class="card">
 
-                    <img src="assets/images/instructor1.jpg" class="card-img-top rounded-circle w-50 m-auto m-auto"
+                    <img src="assets/images/Nekfeu.jpg" class="card-img-top rounded-circle w-50 m-auto m-auto"
                         alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Martin Smith</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title">Nekfeu</h5>
+                        <p class="card-text">Nekfeu, French rapper, member of S-Crew and ex-1995, known for Feu (2015),
+                            Cyborg (2016), Les étoiles vagabondes (2019), hits and diamond discs.</p>
 
                         <a href="#" class="btn btn-secondary">
                             <i class="bi-linkedin"></i>
@@ -498,11 +675,12 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card">
-                    <img src="assets/images/instructor3.jpg" class="card-img-top rounded-circle w-50 m-auto" alt="...">
+                    <img src="assets/images/Orelsan.png" class="card-img-top rounded-circle w-50 m-auto" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Kate Wilson</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title">Orelsan</h5>
+                        <p class="card-text">OrelSan, rapper and versatile artist, member of Casseurs Flowters. Success
+                            with "Perdu d'avance" (2009) and "La fête est finie" (2017), triple diamond disc. Record
+                            sales with "Civilisation" (2021).</p>
                         <a href="#" class="btn btn-secondary">
                             <i class="bi-linkedin"></i>
                         </a>
@@ -521,11 +699,12 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card">
-                    <img src="assets/images/instructor2.jpg" class="card-img-top rounded-circle w-50 m-auto" alt="...">
+                    <img src="assets/images/Népal.png" class="card-img-top rounded-circle w-50 m-auto" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Sam Simpsons</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title">Népal</h5>
+                        <p class="card-text">Nepalese rapper and beatmaker, member of 75ème Session. Notable projects:
+                            "444 Nuits", "445e Nuit", "KKSHISENSE8", and posthumously "Adios Bahamas" (2020), certified
+                            gold disc in 2021. Died November 9, 2019, aged 29.</p>
                         <a href="#" class="btn btn-secondary">
                             <i class="bi-linkedin"></i>
                         </a>
@@ -544,11 +723,12 @@
 
             <div class="col-md-6 col-lg-3">
                 <div class="card">
-                    <img src="assets/images/instructor4.jpg" class="card-img-top rounded-circle w-50 m-auto" alt="...">
+                    <img src="assets/images/Roméo Elvis.jpg" class="card-img-top rounded-circle w-50 m-auto" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Alexa Chow</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title">Roméo Elvis</h5>
+                        <p class="card-text">Belgian rapper Roméo Elvis, son of artists, emerged with L'Or du Commun.
+                            Notable albums: "Chocolat" (2019), platinum disc in France and Belgium, and "TOUT PEUT
+                            ARRIVER" (2022).</p>
                         <a href="#" class="btn btn-secondary">
                             <i class="bi-linkedin"></i>
                         </a>
@@ -653,7 +833,7 @@
         </div>
     </section>
 
-    <section id="testimonial" class="mt-3 container">
+    <!-- <section id="testimonial" class="mt-3 container">
 
         <div id="carouselTestimonial" class="carousel slide bg-secondary p-3" data-bs-ride="carousel">
 
@@ -728,7 +908,7 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section id="contact" class="mt-3 container">
         <div class="row">
